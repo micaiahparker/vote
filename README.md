@@ -5,7 +5,7 @@ Currently uses D&D-like alignments to create reliable voting patterns.
 
 ![Alignment Grid](https://github.com/micaiahparker/vote/raw/master/alignment_grid.png)
 
-*image created with [Altair]()*
+*image created with [Altair](https://altair-viz.github.io/index.html)*
 
 ## todo
 * Actually simulate voting
