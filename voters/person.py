@@ -4,10 +4,11 @@ from .alignment import Alignment
 
 
 class Person:
-    def __init__(self, name=None, alignment=None):
+    def __init__(self, name=None, alignment=None, is_candidate=False):
         self.gender = choice(['male', 'female'])
         self.name = name or get_full_name(gender=self.gender)
         self.alignment = alignment or Alignment()
+        self.is_candidate = is_candidate
 
     def opinion(self, person):
         return self.alignment.opinion(person.alignment)
