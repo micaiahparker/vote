@@ -5,20 +5,21 @@ from .alignment import Alignment
 
 class Person:
     def __init__(self, name=None, alignment=None, is_candidate=False):
-        self.gender = choice(['male', 'female'])
-        self.name = name or get_full_name(gender=self.gender)
+        self.name = name
+        if is_candidate:
+            self.name =  get_full_name()
         self.alignment = alignment or Alignment()
         self.is_candidate = is_candidate
 
     def opinion(self, person):
         return self.alignment.opinion(person.alignment)
 
-    def vote(self, people):
-        return sorted(people, key=self.opinion)
+    def vote(self, population):
+        return sorted(population, key=self.opinion)
 
     @property
     def position(self):
         return self.alignment.position
 
     def __repr__(self):
-        return f'{self.name}: {self.alignment}'
+        return '{name}: {alignment}'.format(name=self.name, alignment=self.alignment)
